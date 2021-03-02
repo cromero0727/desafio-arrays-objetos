@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desafio - Uso basico de Arrays y Objetos</title>
+
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            color: gray;
+        }
+        
+        p {
+            margin: 40px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="testRadio"></div>
+    <script>
+        document.write("<h1>Estadisticas Centro Medico Ñuñoa</h1>");
+
+
+        let radiologia = [{
+            hora: "11:00",
+            especialista: "IGNACIO SCHULZ",
+            paciente: "FRANCISCA ROJAS",
+            rut: "9878782-1",
+            prevision: "FONASA"
+        }, {
+            hora: "11:30",
+            especialista: "FEDERICO SUBERCASEAUX",
+            paciente: "PAMELA ESTRADA",
+            rut: "15345241-3",
+            prevision: "ISAPRE"
+        }, {
+            hora: "15:00",
+            especialista: "FERNANDO WURTHZ",
+            paciente: "ARMANDO LUNA",
+            rut: "16445345-9",
+            prevision: "ISAPRE"
+        }, {
+            hora: "15:30",
+            especialista: "ANA MARIA GODOY",
+            paciente: "MANUEL GODOY",
+            rut: "17666419-0",
+            prevision: "FONASA"
+        }, {
+            hora: "16:00",
+            especialista: "PATRICIA SUAZO",
+            paciente: "RAMON ULLOA",
+            rut: "14989389-K",
+            prevision: "FONASA"
+        }];
+
+
+
+        radiologia.map(function(radiologia) {
+            document.write(`<p>${radiologia.hora},  ${radiologia.especialista}, ${radiologia.paciente}, ${radiologia.rut}, ${radiologia.prevision},</p>`);
+        })
+        document.write(`Cantidad de consultas en Radiologia: ${radiologia.length}<br>`);
+        document.write(`Primer paciente: ${radiologia[0].paciente} | ${radiologia[0].prevision}<br>`);
+        document.write(`Ultimo paciente: ${radiologia[radiologia.length - 1].paciente} | ${radiologia[radiologia.length - 1].rut} | ${radiologia[radiologia.length - 1].prevision}<br>`);
+
+
+
+        let traumatologia = [{
+            hora: "8:00",
+            especialista: "MARIA PAZ ALTUZARRA",
+            paciente: "PAULA SANCHEZ",
+            rut: "15554774-5",
+            prevision: "FONASA"
+        }, {
+            hora: "10:00",
+            especialista: "RAUL ARAYA",
+            paciente: "ANGÉLICA NAVAS",
+            rut: "15444147-9",
+            prevision: "ISAPRE"
+        }, {
+            hora: "10:30",
+            especialista: "MARIA ARRIAGADA",
+            paciente: "ANA KLAPP",
+            rut: "17879423-9",
+            prevision: "ISAPRE"
+        }, {
+            hora: "11:00",
+            especialista: "ALEJANDRO BADILLA",
+            paciente: "FELIPE MARDONES",
+            rut: "1547423-6",
+            prevision: "ISAPRE"
+        }, {
+            hora: "11:30",
+            especialista: "CECILIA BUDNIK",
+            paciente: "DIEGO MARRE",
+            rut: "16554741-K",
+            prevision: "FONASA"
+        }, {
+            hora: "12:00",
+            especialista: "ARTURO CAVAGNARO",
+            paciente: "CECILIA MENDEZ",
+            rut: "9747535-8",
+            prevision: "ISAPRE"
+        }, {
+            hora: "12:30",
+            especialista: "ANDRES KANACRI",
+            paciente: "MARCIAL SUAZO",
+            rut: "11254785-5",
+            prevision: "ISAPRE"
+        }];
+
+
+        traumatologia.map(function(traumatologia) {
+            document.write(`<p>${traumatologia.hora},  ${traumatologia.especialista}, ${traumatologia.paciente}, ${traumatologia.rut}, ${traumatologia.prevision},</p>`);
+        })
+        document.write(`Cantidad de consultas en Traumatología: ${traumatologia.length}<br>`);
+        document.write(`Primer paciente: ${traumatologia[0].paciente} | ${traumatologia[0].prevision}<br>`);
+        document.write(`Ultimo paciente: ${traumatologia[traumatologia.length - 1].paciente} | ${traumatologia[traumatologia.length - 1].rut} | ${traumatologia[traumatologia.length - 1].prevision}<br>`);
+
+
+        let dental = [{
+            "HORA": "8:30",
+            "ESPECIALISTA": "ANDREA ZUÑIGA",
+            "PACIENTE": "MARCELA RETAMAL",
+            "RUT": "11123425-6",
+            "PREVISION": "ISAPRE"
+        }, {
+            "HORA": "11:00",
+            "ESPECIALISTA": "MARIA PIA ZAÑARTU",
+            "PACIENTE": "ANGEL MUÑOZ",
+            "RUT": "9878789-2",
+            "PREVISION": "ISAPRE"
+        }, {
+            "HORA": "11:30",
+            "ESPECIALISTA": "SCARLETT WITTING",
+            "PACIENTE": "MARIO KAST",
+            "RUT": "7998789-5",
+            "PREVISION": "FONASA"
+        }, {
+            "HORA": "13:00",
+            "ESPECIALISTA": "FRANCISCO VON TEUBER",
+            "PACIENTE": "KARIN FERNANDEZ",
+            "RUT": "18887662-K",
+            "PREVISION": "FONASA"
+        }, {
+            "HORA": "13:30",
+            "ESPECIALISTA": "EDUARDO VIÑUELA",
+            "PACIENTE": "HUGO SANCHEZ",
+            "RUT": "17665461-4",
+            "PREVISION": "FONASA"
+        }, {
+            "HORA": "14:00",
+            "ESPECIALISTA": "RAQUEL VILLASECA",
+            "PACIENTE": "ANA SEPULVEDA",
+            "RUT": "14441281-0",
+            "PREVISION": "ISAPRE"
+        }];
+
+
+        dental.map(function(dental) {
+            document.write(`<p>${dental.HORA},  ${dental.ESPECIALISTA}, ${dental.PACIENTE}, ${dental.RUT}, ${dental.PREVISION},</p>`);
+        })
+        document.write(`Cantidad de consultas en Dental: ${dental.length}<br>`);
+        document.write(`Primer paciente: ${dental[0].PACIENTE} | ${dental[0].PREVISION}<br>`);
+        document.write(`Ultimo paciente: ${dental[dental.length - 1].PACIENTE} | ${dental[dental.length - 1].RUT} | ${dental[dental.length - 1].PREVISION}<br>`);
+    </script>
+</body>
+
+</html>
