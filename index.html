@@ -19,6 +19,7 @@
     </style>
 </head>
 
+
 <body>
     <div id="testRadio"></div>
     <script>
@@ -57,7 +58,11 @@
             prevision: "FONASA"
         }];
 
-
+        // desafio 2 (radiologia)
+        // ELIMINAR PRIMER ELEMENTO (objeto)
+        radiologia.shift();
+        // ELIMINAR ULTIMO ELEMENTO (objeto)
+        radiologia.pop();
 
         radiologia.map(function(radiologia) {
             document.write(`<p>${radiologia.hora},  ${radiologia.especialista}, ${radiologia.paciente}, ${radiologia.rut}, ${radiologia.prevision},</p>`);
@@ -112,6 +117,47 @@
             prevision: "ISAPRE"
         }];
 
+        // desafio2
+
+        // NUEVAS HORAS TRAUMATOLOGIA 
+        let nuevosPacientes = [{
+            hora: "09:00",
+            especialista: "RENÉ POBLETE",
+            paciente: "ANA GELLONA",
+            rut: "13123329-7",
+            prevision: "ISAPRE"
+        }, {
+            hora: "09:30",
+            especialista: "MARIA SOLAR ",
+            paciente: "RAMIRO ANDRADE ",
+            rut: "12221451-K",
+            prevision: "FONASA"
+        }, {
+            hora: "10:00",
+            especialista: "RAUL LOYOLA",
+            paciente: "CARMEN ISLA",
+            rut: "10112348-3 ",
+            prevision: "ISAPRE"
+        }, {
+            hora: "10:30",
+            especialista: "ANTONIO LARENAS",
+            paciente: "PABLO LOAYZA ",
+            rut: "13453234-1",
+            prevision: "ISAPRE"
+        }, {
+            hora: "12:00",
+            especialista: "MATIAS ARAVENA",
+            paciente: "SUSANA POBLETE",
+            rut: "14345656-6",
+            prevision: "FONASA",
+        }]
+
+        nuevosPacientes.forEach(function(nuevasConsultas) {
+            traumatologia.push(nuevasConsultas);
+        });
+
+        // desafio2
+
         traumatologia.map(function(traumatologia) {
             document.write(`<p>${traumatologia.hora},  ${traumatologia.especialista}, ${traumatologia.paciente}, ${traumatologia.rut}, ${traumatologia.prevision},</p>`);
         })
@@ -121,50 +167,62 @@
 
 
         let dental = [{
-            "HORA": "8:30",
-            "ESPECIALISTA": "ANDREA ZUÑIGA",
-            "PACIENTE": "MARCELA RETAMAL",
-            "RUT": "11123425-6",
-            "PREVISION": "ISAPRE"
+            hora: "8:30",
+            especialista: "ANDREA ZUÑIGA",
+            paciente: "MARCELA RETAMAL",
+            rut: "11123425-6",
+            prevision: "ISAPRE"
         }, {
-            "HORA": "11:00",
-            "ESPECIALISTA": "MARIA PIA ZAÑARTU",
-            "PACIENTE": "ANGEL MUÑOZ",
-            "RUT": "9878789-2",
-            "PREVISION": "ISAPRE"
+            hora: "11:00",
+            especialista: "MARIA PIA ZAÑARTU",
+            paciente: "ANGEL MUÑOZ",
+            rut: "9878789-2",
+            prevision: "ISAPRE"
         }, {
-            "HORA": "11:30",
-            "ESPECIALISTA": "SCARLETT WITTING",
-            "PACIENTE": "MARIO KAST",
-            "RUT": "7998789-5",
-            "PREVISION": "FONASA"
+            hora: "11:30",
+            especialista: "SCARLETT WITTING",
+            paciente: "MARIO KAST",
+            rut: "7998789-5",
+            prevision: "FONASA"
         }, {
-            "HORA": "13:00",
-            "ESPECIALISTA": "FRANCISCO VON TEUBER",
-            "PACIENTE": "KARIN FERNANDEZ",
-            "RUT": "18887662-K",
-            "PREVISION": "FONASA"
+            hora: "13:00",
+            especialista: "FRANCISCO VON TEUBER",
+            paciente: "KARIN FERNANDEZ",
+            rut: "18887662-K",
+            prevision: "FONASA"
         }, {
-            "HORA": "13:30",
-            "ESPECIALISTA": "EDUARDO VIÑUELA",
-            "PACIENTE": "HUGO SANCHEZ",
-            "RUT": "17665461-4",
-            "PREVISION": "FONASA"
+            hora: "13:30",
+            especialista: "EDUARDO VIÑUELA",
+            paciente: "HUGO SANCHEZ",
+            rut: "17665461-4",
+            prevision: "FONASA"
         }, {
-            "HORA": "14:00",
-            "ESPECIALISTA": "RAQUEL VILLASECA",
-            "PACIENTE": "ANA SEPULVEDA",
-            "RUT": "14441281-0",
-            "PREVISION": "ISAPRE"
+            hora: "14:00",
+            especialista: "RAQUEL VILLASECA",
+            paciente: "ANA SEPULVEDA",
+            rut: "14441281-0",
+            prevision: "ISAPRE"
         }];
 
 
         dental.map(function(dental) {
-            document.write(`<p>${dental.HORA},  ${dental.ESPECIALISTA}, ${dental.PACIENTE}, ${dental.RUT}, ${dental.PREVISION},</p>`);
+            document.write(`<p>${dental.hora},  ${dental.especialista}, ${dental.paciente}, ${dental.rut}, ${dental.prevision},</p>`);
         })
         document.write(`Cantidad de consultas en Dental: ${dental.length}<br>`);
-        document.write(`Primer paciente: ${dental[0].PACIENTE} | ${dental[0].PREVISION}<br>`);
-        document.write(`Ultimo paciente: ${dental[dental.length - 1].PACIENTE} | ${dental[dental.length - 1].RUT} | ${dental[dental.length - 1].PREVISION}<br>`);
+        document.write(`Primer paciente: ${dental[0].paciente} | ${dental[0].prevision}<br>`);
+        document.write(`Ultimo paciente: ${dental[dental.length - 1].paciente} | ${dental[dental.length - 1].rut} | ${dental[dental.length - 1].prevision}<br>`);
+
+
+        // DESAFIO 2 
+
+        // listado nuevo con todos los pacientes 
+
+        document.write("<h3>Listado de todos los pacientes</h3>");
+        let listadoTodos = radiologia.concat(traumatologia, dental);
+        let nombresPacientes = listadoTodos.map(function(el) {
+            document.write(`<p>${el.paciente}; ${el.prevision};</p>`);
+
+        });
     </script>
 </body>
 
